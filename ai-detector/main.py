@@ -64,8 +64,8 @@ def test_dir(inp_dir):
             try:
                 print(test_ai_wrap(filename), filename)
             except:
-                time.sleep(60)
                 print('wait...')
+                time.sleep(60)
                 print(test_ai_wrap(filename), filename)
             time.sleep(1)
 
