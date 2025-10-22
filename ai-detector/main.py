@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import os
 import requests
 import sys
+import time
 
 #  https://www.scribbr.com/ai-detector/
 
@@ -61,6 +62,7 @@ def test_dir(inp_dir):
         for file in files:
             filename = f'{root}/{file}'
             print(test_ai_wrap(filename), filename)
+            time.sleep(1)
 
 def main():
     if len(sys.argv) > 1:
