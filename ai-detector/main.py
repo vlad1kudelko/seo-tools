@@ -36,7 +36,7 @@ def test_ai(inp_text):
             'text': inp_text
         }
     )
-    assert response.status_code == 200, print('ERROR_1', response.json())
+    assert response.status_code == 200, print('ERROR_1', response)
     language = response.json()['data']['language']
     response = requests.post(
         api_url + '/ai-detector/score',
@@ -47,7 +47,7 @@ def test_ai(inp_text):
             'explain': False,
         }
     )
-    assert response.status_code == 200, print('ERROR_2', response.json())
+    assert response.status_code == 200, print('ERROR_2', response)
     pers = response.json()['data']['value']['aiScore'] * 100
     return [ int(pers) ]
 
