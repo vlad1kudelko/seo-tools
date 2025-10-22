@@ -61,7 +61,12 @@ def test_dir(inp_dir):
     for root, dirs, files in os.walk(inp_dir):
         for file in files:
             filename = f'{root}/{file}'
-            print(test_ai_wrap(filename), filename)
+            try:
+                print(test_ai_wrap(filename), filename)
+            except:
+                time.sleep(60)
+                print('wait...')
+                print(test_ai_wrap(filename), filename)
             time.sleep(1)
 
 def main():
