@@ -49,7 +49,9 @@ def test_ai(inp_text):
     )
     assert response.status_code == 200, print('ERROR_2', response)
     pers = response.json()['data']['value']['aiScore'] * 100
-    return [ int(pers) ]
+    return [
+        str(int(pers)).rjust(3,'0')
+    ]
 
 def test_ai_wrap(inp_file):
     inp_text = get_md(inp_file)
