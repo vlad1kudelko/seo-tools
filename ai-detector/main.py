@@ -73,7 +73,7 @@ def main():
         if os.path.isdir(sys.argv[1]):
             test_dir(sys.argv[1])
         else:
-            print(test_ai_wrap(sys.argv[1]))
+            print(test_ai_wrap(sys.argv[1]), filename)
     else:
         print('ERROR_3')
 
