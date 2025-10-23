@@ -56,14 +56,14 @@ def test_ai(inp_text):
 def test_ai_wrap(inp_file):
     inp_text = get_md(inp_file)
     inp_text = ' '.join(inp_text.split()[:1200])
-    return test_ai(inp_text)
+    print(test_ai(inp_text), inp_file)
 
 def test_dir(inp_dir):
     for root, dirs, files in os.walk(inp_dir):
         for file in files:
             filename = f'{root}/{file}'
             try:
-                print(test_ai_wrap(filename), filename)
+                test_ai_wrap(filename)
             except:
                 print(filename)
                 continue
@@ -73,7 +73,7 @@ def main():
         if os.path.isdir(sys.argv[1]):
             test_dir(sys.argv[1])
         else:
-            print(test_ai_wrap(sys.argv[1]), sys.argv[1])
+            test_ai_wrap(sys.argv[1])
     else:
         print('ERROR_3')
 
